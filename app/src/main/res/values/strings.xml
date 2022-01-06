@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">android-experiment</string>
     <string name="lifecycle_activity_title">LifeCycleActivity</string>
+    <string name="lifecycle_activity_navigate_button">메인 액티비티로 이동</string>
 </resources>
