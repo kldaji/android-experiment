@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">android-experiment</string>
+    <string name="main_activity_add_fragment1">ADD fragment 1</string>
+    <string name="main_activity_add_fragment2">ADD fragment 2</string>
 </resources>
