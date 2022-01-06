@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.kldaji.android_experiment.databinding.FragmentTwoBinding
 
@@ -37,6 +38,13 @@ class TwoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.d("TwoFragment", "onViewCreated()")
         Log.d("TwoFragment", "$binding")
+        setButtonListener()
+    }
+
+    private fun setButtonListener() {
+        binding.btnTwo.setOnClickListener {
+            Toast.makeText(requireContext(), "Fragment two", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {

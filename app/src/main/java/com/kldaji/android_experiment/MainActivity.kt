@@ -10,6 +10,7 @@ import com.kldaji.android_experiment.multifragment.TwoFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private val oneFragment = OneFragment()
     private val twoFragment = TwoFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +25,13 @@ class MainActivity : AppCompatActivity() {
     private fun setAddFragmentListener() {
         binding.btnMainAdd1.setOnClickListener {
             supportFragmentManager.commit {
-                replace<OneFragment>(R.id.fc_main_1)
+                add(R.id.fc_main_1, oneFragment)
                 addToBackStack(null)
             }
         }
         binding.btnMainAdd2.setOnClickListener {
             supportFragmentManager.commit {
-                replace(R.id.fc_main_2, twoFragment)
+                add(R.id.fc_main_1, twoFragment)
                 addToBackStack(null)
             }
         }
