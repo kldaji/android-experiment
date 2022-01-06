@@ -3,7 +3,8 @@
 
     <string name="lifecycle_activity_title">LifeCycleActivity</string>
     <string name="lifecycle_activity_navigate_button">메인 액티비티로 이동</string>
-    <string name="lifecycle_activity_add_fragment">ADD</string>
+    <string name="lifecycle_activity_add_fragment">ADD Fragment 1</string>
+    <string name="lifecycle_activity_add_fragment2">ADD Fragment 2</string>
 
     <string name="lifecycle_fragment_title">LifeCycle Fragment</string>
 </resources>

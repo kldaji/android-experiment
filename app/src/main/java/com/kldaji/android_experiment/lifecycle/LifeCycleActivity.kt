@@ -11,6 +11,7 @@ import com.kldaji.android_experiment.databinding.ActivityLifecycleBinding
 class LifeCycleActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLifecycleBinding
     private val fragment1 = LifeCycleFragment()
+    private val fragment2 = LifeCycle2Fragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,13 @@ class LifeCycleActivity : AppCompatActivity() {
         binding.btnLifecycleAddFragment.setOnClickListener {
             with(supportFragmentManager.beginTransaction()) {
                 replace(R.id.fragment1_lifecycle, fragment1)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        binding.btnLifecycleAddFragment2.setOnClickListener {
+            with(supportFragmentManager.beginTransaction()) {
+                replace(R.id.fragment1_lifecycle, fragment2)
                 addToBackStack(null)
                 commit()
             }
