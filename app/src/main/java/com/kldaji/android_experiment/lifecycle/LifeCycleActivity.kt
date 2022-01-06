@@ -27,6 +27,9 @@ class LifeCycleActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         Log.d("LifeCycleActivity", "onRestoreInstanceState()")
+        savedInstanceState.getString(TEMP_STRING)?.let {
+            Log.d("LifeCycleActivity", "restored value is $it")
+        }
     }
 
     override fun onResume() {
@@ -48,10 +51,15 @@ class LifeCycleActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.d("LifeCycleActivity", "onSaveInstanceState()")
+        outState.putString(TEMP_STRING, "temp")
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.d("LifeCycleActivity", "onDestroy()")
+    }
+
+    companion object {
+        const val TEMP_STRING = "key"
     }
 }
