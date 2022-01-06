@@ -1,7 +1,6 @@
 package com.kldaji.android_experiment.lifecycle
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.kldaji.android_experiment.R
