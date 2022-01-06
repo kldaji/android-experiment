@@ -3,12 +3,15 @@ package com.kldaji.android_experiment.lifecycle
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.kldaji.android_experiment.R
+import com.kldaji.android_experiment.databinding.ActivityLifecycleBinding
 
 class LifeCycleActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLifecycleBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lifecycle)
+        binding = ActivityLifecycleBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         Log.d("LifeCycleActivity", "onCreate()")
         Log.d("LifeCycleActivity", this.toString())
     }
