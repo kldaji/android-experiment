@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Androidexperiment">
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".lifecycle.LifeCycleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
