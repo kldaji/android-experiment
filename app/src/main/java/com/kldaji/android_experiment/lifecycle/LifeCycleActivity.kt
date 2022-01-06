@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.kldaji.android_experiment.MainActivity
+import com.kldaji.android_experiment.R
 import com.kldaji.android_experiment.databinding.ActivityLifecycleBinding
 
 class LifeCycleActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLifecycleBinding
+    private val fragment1 = LifeCycleFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,11 +19,22 @@ class LifeCycleActivity : AppCompatActivity() {
         Log.d("LifeCycleActivity", "onCreate()")
         Log.d("LifeCycleActivity", this.toString())
         startMainActivity()
+        addFragment()
     }
 
     private fun startMainActivity() {
         binding.btnLifecycleNavigate.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+    }
+
+    private fun addFragment() {
+        binding.btnLifecycleAddFragment.setOnClickListener {
+            with(supportFragmentManager.beginTransaction()) {
+                replace(R.id.fragment1_lifecycle, fragment1)
+                addToBackStack(null)
+                commit()
+            }
         }
     }
 
