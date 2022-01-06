@@ -1,8 +1,10 @@
 package com.kldaji.android_experiment.lifecycle
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.kldaji.android_experiment.MainActivity
 import com.kldaji.android_experiment.databinding.ActivityLifecycleBinding
 
 class LifeCycleActivity : AppCompatActivity() {
@@ -14,6 +16,13 @@ class LifeCycleActivity : AppCompatActivity() {
         setContentView(binding.root)
         Log.d("LifeCycleActivity", "onCreate()")
         Log.d("LifeCycleActivity", this.toString())
+        startMainActivity()
+    }
+
+    private fun startMainActivity() {
+        binding.btnLifecycleNavigate.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     override fun onRestart() {
