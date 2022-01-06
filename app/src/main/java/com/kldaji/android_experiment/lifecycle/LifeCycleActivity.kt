@@ -40,14 +40,14 @@ class LifeCycleActivity : AppCompatActivity() {
         Log.d("LifeCycleActivity", "onPause()")
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        Log.d("LifeCycleActivity", "onSaveInstanceState()")
-    }
-
     override fun onStop() {
         super.onStop()
         Log.d("LifeCycleActivity", "onStop()")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d("LifeCycleActivity", "onSaveInstanceState()")
     }
 
     override fun onDestroy() {
