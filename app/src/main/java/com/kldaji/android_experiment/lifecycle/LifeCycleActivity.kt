@@ -18,7 +18,9 @@ class LifeCycleActivity : AppCompatActivity() {
         binding = ActivityLifecycleBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.d("LifeCycleActivity", "onCreate()")
-        Log.d("LifeCycleActivity", this.toString())
+        savedInstanceState?.getString(TEMP_STRING)?.let {
+            Log.d("LifeCycleActivity", "restored value is $it")
+        }
         startMainActivity()
         addFragment()
     }
@@ -67,7 +69,6 @@ class LifeCycleActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d("LifeCycleActivity", "onResume()")
-        Log.d("LifeCycleActivity", this.toString())
     }
 
     override fun onPause() {
